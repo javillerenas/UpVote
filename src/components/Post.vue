@@ -3,7 +3,7 @@
         <article class="media">
 
             <figure class="media-left">
-                <img v-if="post.submissionImage" :src="post.postImageUrl" alt="submission image" class="image is-64x64">
+                <img v-if="post.submissionImage" :src="post.submissionImage" alt="submission image" class="image is-64x64">
             </figure>
 
             <div class="media-content">
@@ -27,8 +27,8 @@
 
             <div class="media-right">
                 <span class="icon is-small">
-                    <i @click="increaseLikes()" class="fa fa-chevron-up"></i>
-                    <strong class="has-text-info">{{ likes }}</strong>
+                    <i @click="increaseVotes()" class="fa fa-chevron-up"></i>
+                    <strong class="has-text-info">{{ post.votes }}</strong>
                 </span>
             </div>
 
@@ -41,14 +41,9 @@ export default {
     props: {
         post: null
     },
-    data: function () {
-        return {
-            likes: 10
-        }
-    },
     methods: {
-        increaseLikes: function () {
-            this.likes += 1;
+        increaseVotes: function () {
+            this.post.votes += 1;
         }
     }
 }
