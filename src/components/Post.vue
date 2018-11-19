@@ -1,5 +1,5 @@
 <template>
-    <div v-if="post !== null" class="section">
+    <div v-if="post !== null" class="section post">
         <article class="media">
 
             <figure class="media-left">
@@ -52,6 +52,10 @@ export default {
 
 // STYLE
 <style scoped>
+
+.post p {
+    font-size: calc(12px + 0.5vw);
+}
 
 .section {
     padding: 0.5rem 1.5rem;
