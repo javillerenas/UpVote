@@ -1,25 +1,25 @@
 <template>
-    <div class="section">
+    <div v-if="post !== null" class="section">
         <article class="media">
 
             <figure class="media-left">
-                <img src="@/assets/images/submissions/image-yellow.png" alt="submission image" class="image is-64x64">
+                <img v-if="post.submissionImage" :src="post.postImageUrl" alt="submission image" class="image is-64x64">
             </figure>
 
             <div class="media-content">
                 <div class="content">
                     <p>
                         <strong>
-                            <a href="#" class="has-text-info">Yellow Pal</a>
-                            <span class="tag is-small">#4</span>
+                            <a href="#" class="has-text-info">{{ post.title }}</a>
+                            <span class="tag is-small">#{{ post.id }}</span>
                         </strong>
                         <br>
-                            On-demand sand castle construction expertise.
+                            {{ post.description }}
                         <br>
                         <small class="is-size-7">
                             Submitted by: 
                             <img class="image is-24x24 is-inline-block"
-                                src="@/assets/images/avatars/daniel.jpg">
+                                :src="post.avatar">
                         </small>
                     </p>
                 </div>
@@ -27,8 +27,8 @@
 
             <div class="media-right">
                 <span class="icon is-small">
-                    <i class="fa fa-chevron-up"></i>
-                    <strong class="has-text-info">10</strong>
+                    <i @click="increaseLikes()" class="fa fa-chevron-up"></i>
+                    <strong class="has-text-info">{{ likes }}</strong>
                 </span>
             </div>
 
@@ -38,7 +38,19 @@
 
 <script>
 export default {
-    
+    props: {
+        post: null
+    },
+    data: function () {
+        return {
+            likes: 10
+        }
+    },
+    methods: {
+        increaseLikes: function () {
+            this.likes += 1;
+        }
+    }
 }
 </script>
 
