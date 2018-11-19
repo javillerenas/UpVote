@@ -51,8 +51,11 @@ export default {
 
 
 // STYLE
-<style>
+<style scoped>
 
+.section {
+    padding: 0.5rem 1.5rem;
+}
 .media {
     max-width: 600px;
     margin: 0 auto;
