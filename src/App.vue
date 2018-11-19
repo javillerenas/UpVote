@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <UpVote></UpVote>
   </div>
 </template>
 
 <script>
+import UpVote from './components/UpVote'
 // import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
+    UpVote
   }
 }
 </script>
