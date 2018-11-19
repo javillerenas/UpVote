@@ -18,7 +18,7 @@
                         <br>
                         <small class="is-size-7">
                             Submitted by: 
-                            <img class="image is-24x24"
+                            <img class="image is-24x24 is-inline-block"
                                 src="@/assets/images/avatars/daniel.jpg">
                         </small>
                     </p>
