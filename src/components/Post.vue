@@ -3,7 +3,7 @@
         <article class="media">
 
             <figure class="media-left">
-                <img v-if="post.submissionImage" :src="post.submissionImage" alt="submission image" class="image is-64x64">
+                <img :src="post.submissionImage" alt="submission image" class="image is-64x64">
             </figure>
 
             <div class="media-content">
