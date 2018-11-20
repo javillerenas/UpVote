@@ -1,7 +1,4 @@
 <div align="center">
-    <h1>  </h1>
-    <img src="mockup.png" width="350">
-<div align="center">
   <br>
   <img
     alt="DEV"
