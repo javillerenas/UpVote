@@ -1,6 +1,6 @@
 <div align="center">
     <h1> 💯 Up Vote ! 🗳 </h1>
-    <img src="mockup.png" width="400">
+    <img src="mockup.png" width="350">
 </div>
 
 ## About❓️
@@ -9,6 +9,7 @@ This project was created following the first chapter of [_Fullstack Vue_][1], an
 [1]: https://www.fullstack.io/vue/
 
 <hr>
+
 ## Project setup
 ```
 npm install
