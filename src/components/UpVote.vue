@@ -8,7 +8,7 @@
 
         <SubmitBox @submittedPost="createPost"></SubmitBox>
         
-        <footer>
+        <footer class="footer">
             <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
         </footer>
     </div>
@@ -55,6 +55,10 @@ export default {
 
 .header {
     padding: 3rem 1rem 1.5rem;
+}
+
+.footer {
+    padding: 1rem;
 }
 </style>
 

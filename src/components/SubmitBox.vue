@@ -1,32 +1,33 @@
 <template>
-    <article class="media">
+    <div class="section post">
+        <article class="media">
 
-        <figure class="media-left">
-            <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-            </p>
-        </figure>
+            <figure class="media-left">
+                <p class="image is-64x64">
+                    <img src="@/../public/images/avatars/molly.png">
+                </p>
+            </figure>
 
-        <div class="media-content">
-            <div class="content">
-                <div class="field">
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Post title." v-model="title">
+            <div class="media-content">
+                <div class="content">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Post title." v-model="title">
+                        </div>
                     </div>
-                </div>
-                <div class="field">
-                    <p class="control">
-                        <textarea class="textarea" placeholder="Post body." v-model="content"></textarea>
-                    </p>
-                </div>
-                <div>
-                    <a @click="submitPost()" class="button is-info">Submit</a>
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea" placeholder="Post body." v-model="content"></textarea>
+                        </p>
+                    </div>
+                    <div>
+                        <a @click="submitPost()" class="button is-info">Submit</a>
+                    </div>
                 </div>
             </div>
 
-        </div>
-
-    </article>
+        </article>
+    </div>
 </template>
 
 <script>
@@ -58,6 +59,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.section {
+    padding: 0.5rem 1.5rem;
+}
 
 .media {
     max-width: 600px;

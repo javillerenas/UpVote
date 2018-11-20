@@ -1,5 +1,14 @@
-# upvote
+<div align="center">
+    <h1> 💯 Up Vote ! 🗳 </h1>
+    <img src="mockup.png" style="width: 50%">
+</div>
 
+## About❓️
+This project was created following the first chapter of [_Fullstack Vue_][1], and I personally added my own style.
+
+[1]: https://www.fullstack.io/vue/
+
+<hr>
 ## Project setup
 ```
 npm install
@@ -14,16 +23,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
