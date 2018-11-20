@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="section">
+        <div class="section header">
             <h2 class="title has-text-centered dividing-header">UpVote! 💯</h2>
         </div>
 
@@ -52,5 +52,9 @@ export default {
 
 // STYLE
 <style scoped>
+
+.header {
+    padding: 3rem 1rem 1.5rem;
+}
 </style>
 
