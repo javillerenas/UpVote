@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Yellow Pail",
-      "description": "On-demand sand castle construction expertise.",
+      "content": "On-demand sand castle construction expertise.",
       "url": "#",
       "votes": 16,
       "avatar": "./images/avatars/daniel.jpg",
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "title": "Supermajority: The Fantasy Congress League",
-      "description": "Earn points when your favorite politicians pass legislation.",
+      "content": "Earn points when your favorite politicians pass legislation.",
       "url": "#",
       "votes": 11,
       "avatar": "./images/avatars/kristy.png",
@@ -21,7 +21,7 @@
     {
       "id": 3,
       "title": "Tinfoild: Tailored tinfoil hats",
-      "description": "We have your measurements and shipping address.",
+      "content": "We have your measurements and shipping address.",
       "url": "#",
       "votes": 17,
       "avatar": "./images/avatars/veronika.jpg",
@@ -30,7 +30,7 @@
     {
       "id": 4,
       "title": "Haught or Naught",
-      "description": "High-minded or absent-minded? You decide.",
+      "content": "High-minded or absent-minded? You decide.",
       "url": "#",
       "votes": 9,
       "avatar": "./images/avatars/molly.png",

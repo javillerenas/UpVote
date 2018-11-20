@@ -14,7 +14,7 @@
                             <span class="tag is-small">#{{ post.id }}</span>
                         </strong>
                         <br>
-                            {{ post.description }}
+                            {{ post.content }}
                         <br>
                         <small class="is-size-7">
                             Submitted by: 

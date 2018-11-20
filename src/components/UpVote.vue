@@ -5,6 +5,8 @@
         </div>
 
         <Post v-for="a in sortedSubmissions" :post="a" :key="a.id"></Post>
+
+        <SubmitBox @submittedPost="createPost"></SubmitBox>
         
         <footer>
             <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
@@ -14,11 +16,13 @@
 
 <script>
 import Post from '@/components/Post'
+import SubmitBox from '@/components/SubmitBox'
 import seed from '@/seed.json'
 
 export default {
     components: {
-        Post
+        Post,
+        SubmitBox
     },
     data: function () {
         return {
@@ -30,6 +34,16 @@ export default {
             return this.submissions.slice(0).sort( (a,b) => {
                 return b.votes - a.votes;
             });
+        },
+        numSubmissions: function () {
+            return this.submissions.length;
+        }
+    },
+    methods: {
+        createPost: function (post) {
+            post.votes = 0;
+            post.id = this.numSubmissions + 1;
+            this.submissions.push(post);
         }
     }
 }
