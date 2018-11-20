@@ -1,6 +1,6 @@
 <div align="center">
     <h1> 💯 Up Vote ! 🗳 </h1>
-    <img src="mockup.png" style="width: 400">
+    <img src="mockup.png" width="400">
 </div>
 
 ## About❓️
