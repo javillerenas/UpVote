@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <div>
-                        <a @click="submitPost()" class="button is-info">Submit</a>
+                        <button @click="submitPost()" class="button is-info">Submit</button>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,6 @@
 
 <script>
 import UpVote from './components/UpVote'
-// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
