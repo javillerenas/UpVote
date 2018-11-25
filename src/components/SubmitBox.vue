@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <div>
-                        <button @click="submitPost()" class="button is-info">Submit</button>
+                        <button @click.prevent="submitPost()" class="button is-info">Submit</button>
                     </div>
                 </div>
             </div>
