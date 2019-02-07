@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.2",
+    "firebase": "^5.8.2",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -19,6 +20,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "firebase-tools": "^6.3.1",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.17",

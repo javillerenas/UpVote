@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": 1,
-      "title": "Yellow Pail",
-      "content": "On-demand sand castle construction expertise.",
+      "title": "SaaS: Saving as a Service",
+      "content": "A simple tool for developing ML products using as backend Alexander and Mule. This app will let you integrate different services and will let you choose an optimization function for your intended action.",
       "url": "#",
       "votes": 16,
       "avatar": "./images/avatars/daniel.jpg",
@@ -11,30 +11,12 @@
     },
     {
       "id": 2,
-      "title": "Supermajority: The Fantasy Congress League",
-      "content": "Earn points when your favorite politicians pass legislation.",
+      "title": "Kaoki",
+      "content": "This mule app will recommend you at what time you should take a cab so you make savings!",
       "url": "#",
       "votes": 11,
       "avatar": "./images/avatars/kristy.png",
       "submissionImage": "./images/submissions/image-rose.png"
-    },
-    {
-      "id": 3,
-      "title": "Tinfoild: Tailored tinfoil hats",
-      "content": "We have your measurements and shipping address.",
-      "url": "#",
-      "votes": 17,
-      "avatar": "./images/avatars/veronika.jpg",
-      "submissionImage": "./images/submissions/image-steel.png"
-    },
-    {
-      "id": 4,
-      "title": "Haught or Naught",
-      "content": "High-minded or absent-minded? You decide.",
-      "url": "#",
-      "votes": 9,
-      "avatar": "./images/avatars/molly.png",
-      "submissionImage": "./images/submissions/image-aqua.png"
     }
   ]
 }
