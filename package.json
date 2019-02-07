@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "bulma": "^0.7.2",
-    "firebase": "^5.8.2",
     "vue": "^2.5.17"
   },
   "devDependencies": {
