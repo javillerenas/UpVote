@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "hack-a-vote"
+  }
+}
