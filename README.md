@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/martinrey/hack-a-vote/tree/master.svg?style=svg)](https://circleci.com/gh/martinrey/hack-a-vote/tree/master)
+
 <div align="center">
   <br>
   <img
