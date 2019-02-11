@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="section header">
-            <h2 class="title has-text-centered dividing-header">UpVote! 💯</h2>
+            <h2 class="title has-text-centered dividing-header">Hack-a-vote! ✂️💥</h2>
         </div>
 
         <div class="content">

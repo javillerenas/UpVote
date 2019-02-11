@@ -1,11 +1,11 @@
 <template>
   <div id="app" class="is-marginless is-paddingledd">
-    <UpVote></UpVote>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import UpVote from './components/UpVote'
+import UpVote from '@/views/UpVote'
 
 export default {
   name: 'app',
