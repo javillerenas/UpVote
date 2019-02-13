@@ -1,17 +1,14 @@
 <template>
     <div v-if="post !== null" class="section post">
         <article :class="{media: true, hot: isHot}">
-
             <figure class="media-left">
-                <img :src="post.submissionImage" alt="submission image" class="image is-64x64">
+                <img :src="'./images/submissions/' + post.submissionImage" alt="submission image" class="image is-64x64">
             </figure>
-
             <div class="media-content">
                 <div class="content">
                     <p>
                         <strong>
                             <a href="#" class="has-text-info">{{ post.title }}</a>
-                            <span class="tag is-small">#{{ post.id }}</span>
                         </strong>
                         <br>
                             {{ post.content }}
@@ -19,19 +16,17 @@
                         <small class="is-size-7">
                             Submitted by: 
                             <img class="image is-24x24 is-inline-block"
-                                :src="post.avatar">
+                                :src="'./images/avatars/' + post.avatar">
                         </small>
                     </p>
                 </div>
             </div>
-
             <div class="media-right">
                 <span class="icon is-small">
                     <i @click="increaseVotes()" class="fa fa-chevron-up"></i>
                     <strong class="has-text-info">{{ post.votes }}</strong>
                 </span>
             </div>
-
         </article>
     </div>
 </template>
@@ -54,10 +49,7 @@ export default {
 }
 </script>
 
-
-// STYLE
 <style lang='scss' scoped>
-
 .post p {
     font-size: calc(12px + 0.5vw);
 }
@@ -91,5 +83,4 @@ export default {
 .hot {
     @include border-gradient(rgb(255, 72, 22), rgb(255, 185, 0));
 }
-
 </style>

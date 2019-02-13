@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as post from '@/store/modules/post.js'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
+    post
   },
   state: {
     user: null,

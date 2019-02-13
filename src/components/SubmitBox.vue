@@ -43,7 +43,6 @@ export default {
             var post = {
                 title: this.title,
                 content: this.content,
-                // TODO: create login system and set up below fields.
                 url: "#",
                 avatar: "./images/avatars/daniel.jpg",
                 submissionImage: "./images/submissions/image-yellow.png"
@@ -59,7 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .section {
     padding: 0.5rem 1.5rem;
 }
@@ -71,5 +69,4 @@ export default {
     padding: 1em 1.5em 0.5em 1.5em;
     border-radius: 0.3em;
 }
-
 </style>
