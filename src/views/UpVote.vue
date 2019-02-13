@@ -1,43 +1,44 @@
 <template>
-    <div>
-        <div class="section header">
-            <h2 class="title has-text-centered dividing-header">Hack-a-vote! ✂️💥</h2>
-        </div>
-
-        <div class="content">
-            <Post v-for="a in sortedSubmissions" :post="a" :key="a.id"></Post>
-            <SubmitBox @submittedPost="createPost"></SubmitBox>
-        </div>
-        
-        <footer class="footer">
-            <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
-        </footer>
+  <div>
+    <div class="section header">
+      <h2 class="title has-text-centered dividing-header">Hack-a-vote! ✂️💥</h2>
     </div>
+
+    <div class="content">
+      <Post v-for="a in sortedSubmissions" :post="a" :key="a.id"></Post>
+      <SubmitBox @submittedPost="createPost"></SubmitBox>
+    </div>
+
+    <footer class="footer">
+      <img
+        src="https://bulma.io/images/made-with-bulma.png"
+        alt="Made with Bulma"
+        width="128"
+        height="24"
+      >
+    </footer>
+  </div>
 </template>
 
 <script>
 import Post from '@/components/Post'
 import SubmitBox from '@/components/SubmitBox'
-import seed from '@/seed.json'
+import store from '@/store/store'
+
 
 export default {
     components: {
         Post,
         SubmitBox
     },
-    data: function () {
-        return {
-            submissions: seed.posts
-        }
-    },
     computed: {
         sortedSubmissions: function () {
-            return this.submissions.slice(0).sort( (a,b) => {
+            return store.state.post.posts.slice(0).sort( (a,b) => {
                 return b.votes - a.votes;
             });
         },
         numSubmissions: function () {
-            return this.submissions.length;
+            return store.state.post.posts.length;
         }
     },
     methods: {
@@ -50,16 +51,12 @@ export default {
 }
 </script>
 
-
-// STYLE
 <style scoped>
-
 .header {
-    padding: 3rem 1rem 1.5rem;
+  padding: 3rem 1rem 1.5rem;
 }
 
 .footer {
-    padding: 1rem;
+  padding: 1rem;
 }
 </style>
-
