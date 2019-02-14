@@ -24,8 +24,6 @@
   </a>
 </div>
 
-[![CircleCI](https://circleci.com/gh/martinrey/hack-a-vote/tree/master.svg?style=svg)](https://circleci.com/gh/martinrey/hack-a-vote/tree/master)
-
 ## About❓️
 This project was created following the first chapter of [_Fullstack Vue_][1], and I personally added my own style.
 
