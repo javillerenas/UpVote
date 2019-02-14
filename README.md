@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/martinrey/hack-a-vote/tree/master.svg?style=svg)](https://circleci.com/gh/martinrey/hack-a-vote/tree/master)
-
 <div align="center">
   <br>
   <img
@@ -7,7 +5,7 @@
     src="mockup.png"
     width=350px
   />
-  <h1>UpVote! 💯🗳</h1>
+  <h1>Hack a vote!✂️💥</h1>
   <strong>Hacker New's-like Site</strong>
 </div>
 <br/>
@@ -21,8 +19,9 @@
   <a href="#">
     <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="awesome badge"/>
   </a>
-  
 </div>
+
+[![CircleCI](https://circleci.com/gh/martinrey/hack-a-vote/tree/master.svg?style=svg)](https://circleci.com/gh/martinrey/hack-a-vote/tree/master)
 
 ## About❓️
 This project was created following the first chapter of [_Fullstack Vue_][1], and I personally added my own style.
