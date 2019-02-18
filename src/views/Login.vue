@@ -1,9 +1,15 @@
 <template>
-  <div id="firebaseui-auth-container"></div>
+  <section>
+    <h1 v-if="!isValidUser && user !== null">
+      Usted ingreso con <b>{{ user.email }}</b>
+      <br/>Utilice una cuenta de Mulesoft para ingresar
+    </h1>
+    <div id="firebaseui-auth-container"></div>
+  </section>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import firebase from "firebase/app";
 
 const uiConfig = {
@@ -12,7 +18,8 @@ const uiConfig = {
 };
 export default {
   computed: {
-    ...mapGetters("user", ["getFBUiApp"])
+    ...mapState("user", ["user"]),
+    ...mapGetters("user", ["isValidUser", "getFBUiApp"])
   },
   mounted() {
     this.getFBUiApp.start("#firebaseui-auth-container", uiConfig);

@@ -1,5 +1,4 @@
-import { FIREBASE_APP, FIREBASE_VOTE } from "@/helpers/sources";
-
+/* eslint-disable */
 export default {
   namespaced: true,
   state: {
@@ -39,25 +38,7 @@ export default {
       context.commit("SET_USER", user);
     },
     vote(context, { projectId }) {
-      /*
-        return fetch(`${FIREBASE_APP}/${FIREBASE_VOTE}`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: {
-                vote: projectId
-            }
-        })
-        .then(res => { return res.json() })
-        .then((res) => {
-            context.commit('SET_VOTE', res)
-            context.dispatch('project/getAllProjects', null, { root: true })
-        })
-        .catch(error => { return error })
-        */
-      console.log(context, projectId);
+      return projectId
     }
   }
 };

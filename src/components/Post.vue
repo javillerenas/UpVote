@@ -1,23 +1,23 @@
 <template>
-  <div v-if="project !== null" class="section project">
-    <article :class="{media: true, hot: isHot}">
+  <div v-if="post !== null" class="section post">
+    <article :class="{media: true}">
       <figure class="media-left">
-        <img :src="project.submissionImage" alt="submission image" class="image is-64x64">
+        <img :src="post.submissionImage" alt="submission image" class="image is-64x64">
       </figure>
 
       <div class="media-content">
         <div class="content">
           <p>
             <strong>
-              <a href="#" class="has-text-info">{{ project.title }}</a>
-              <span class="tag is-small">#{{ project.id }}</span>
+              <a href="#" class="has-text-info">{{ post.title }}</a>
+              <span class="tag is-small">#{{ post.id }}</span>
             </strong>
             <br>
-            {{ project.content }}
+            {{ post.content }}
             <br>
             <small class="is-size-7">
               Submitted by:
-              <img class="image is-24x24 is-inline-block" :src="project.avatar">
+              <img class="image is-24x24 is-inline-block" :src="post.avatar">
             </small>
           </p>
         </div>
@@ -25,8 +25,8 @@
 
       <div class="media-right">
         <span class="icon is-small">
-          <i @click="increaseVotes()" class="fa fa-chevron-up"></i>
-          <strong class="has-text-info">{{ project.votes }}</strong>
+          <i class="fa fa-chevron-up"></i>
+          <strong class="has-text-info">{{ post.votes || 0 }}</strong>
         </span>
       </div>
     </article>
@@ -37,23 +37,13 @@
 export default {
   name: "Post",
   props: {
-    project: null
+    post: null
   },
   methods: {
-    increaseVotes: function() {
-      this.project.votes++;
-    }
-  },
-  computed: {
-    isHot: function() {
-      return this.project.votes >= 20;
-    }
   }
 };
 </script>
 
-
-// STYLE
 <style lang='scss' scoped>
 .project p {
   font-size: calc(12px + 0.5vw);

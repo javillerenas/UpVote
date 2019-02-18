@@ -11,13 +11,8 @@
 </template>
 
 <script>
-import UpVote from '@/views/UpVote'
-
 export default {
-  name: 'app',
-  components: {
-    UpVote
-  }
+  name: 'app'
 }
 </script>
 

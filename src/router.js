@@ -21,6 +21,20 @@ const router = new Router({
       component: loadView("UpVote"),
       meta: {
         requiresAuth: true
+      },
+      beforeEnter(routeTo, routeFrom, next) {
+        const currentPage = parseInt(routeTo.query.page) || 1
+        const uris = ['post/fetchPosts']
+        Promise.all(
+          uris.map(uri =>
+            store.dispatch(uri, {
+              page: currentPage
+            })
+          )
+        ).then(() => {
+          routeTo.params.page = currentPage
+          next()
+        })
       }
     },
     {

@@ -1,21 +1,22 @@
 <template>
   <div class="content">
-    <Post v-for="project of list" :project="project" :key="project.id"/>
+    <h4 v-if="listProjects === {}">Aguarde un momento mientras traemos los proyectos.</h4>
+    <Post v-for="post of listProjects" :post="post" :key="post.id"/>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import Post from "@/components/Post";
 
 export default {
   name: "UpVote",
   computed: {
-    ...mapState("project", ["list"]),
+    ...mapGetters("post", ["listProjects"]),
     ...mapState("user", ["currentVote"])
   },
-  beforeMount() {
-    this.$store.dispatch("project/getAllProjects");
+  beforeCreate() {
+    this.$store.dispatch("post/getList");
   },
   components: {
     Post
@@ -25,4 +26,3 @@ export default {
 
 <style scoped>
 </style>
-

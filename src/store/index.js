@@ -3,7 +3,7 @@ import Vuex from "vuex";
 import VuexPersist from "vuex-persist";
 // Modules
 import user from "./modules/user";
-import project from "./modules/project";
+import post from "./modules/post";
 
 // Initialize
 Vue.use(Vuex);
@@ -15,7 +15,7 @@ const vuexPersist = new VuexPersist({
 const store = new Vuex.Store({
   modules: {
     user,
-    project
+    post
   },
   state: {},
   mutations: {
