@@ -7,6 +7,9 @@
     <a href="#">
         <img src="https://circleci.com/gh/martinrey/hack-a-vote/tree/master.svg?style=svg" alt="Build" />
     </a>
+    <a href="https://snyk.io/test/github/martinrey/alexander-wiki?targetFile=package.json">
+        <img src="https://snyk.io/test/github/martinrey/alexander-wiki/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/martinrey/alexander-wiki?targetFile=package.json" style="max-width:100%;">
+    </a>
     <a href="https://vuejs.org/">
         <img src="https://img.shields.io/badge/Vue-2.5.17-brightgreen.svg" alt="vue version" />
     </a>
