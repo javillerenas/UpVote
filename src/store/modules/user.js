@@ -1,4 +1,6 @@
 /* eslint-disable */
+import { FBFirestore } from '@/helpers/firebaseConfig'
+
 export default {
   namespaced: true,
   state: {
@@ -34,11 +36,24 @@ export default {
       context.commit("SET_FBAPP", fbData.FBApp);
       context.commit("SET_FBUIAPP", fbData.FBUIApp);
     },
+    getCurrentVote(context) {
+      let { uid } = context.state.user
+      FBFirestore.collection('votes')
+        .doc(uid).get()
+        .then(snapshot => {
+          let { id } = snapshot.data()
+          context.commit("SET_VOTE", id);
+        })
+    },
     login(context, user) {
       context.commit("SET_USER", user);
+      context.dispatch("getCurrentVote");
     },
-    vote(context, { projectId }) {
-      return projectId
+    vote(context, { id }) {
+      let { uid } = context.state.user
+      FBFirestore.collection('votes').doc(uid).set({ id }).then( () => {
+        context.commit("SET_VOTE", id);
+      })
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="loginSection">
     <h1 v-if="!isValidUser && user !== null">
       Usted ingreso con <b>{{ user.email }}</b>
       <br/>Utilice una cuenta de Mulesoft para ingresar
@@ -31,4 +31,11 @@ export default {
 </script>
 
 <style src="firebaseui/dist/firebaseui.css"></style>
+<style>
+.loginSection {
+  display: inline-block;
+  margin: 100px 0;
+  min-height: 50px;
+}
+</style>
 

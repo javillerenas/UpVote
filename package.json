@@ -12,6 +12,7 @@
     "bulma": "^0.7.2",
     "firebase": "^5.8.2",
     "firebaseui": "^3.5.2",
+    "masonry-layout": "^4.2.2",
     "vue": "^2.5.17",
     "vue-router": "^3.0.2",
     "vuefire": "^2.0.0-alpha.20",

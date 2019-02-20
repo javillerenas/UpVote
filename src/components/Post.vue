@@ -1,80 +1,188 @@
 <template>
-  <div v-if="post !== null" class="section post">
-    <article :class="{media: true}">
-      <figure class="media-left">
-        <img :src="post.submissionImage" alt="submission image" class="image is-64x64">
-      </figure>
-
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>
-              <a href="#" class="has-text-info">{{ post.title }}</a>
-              <span class="tag is-small">#{{ post.id }}</span>
-            </strong>
-            <br>
-            {{ post.content }}
-            <br>
-            <small class="is-size-7">
-              Submitted by:
-              <img class="image is-24x24 is-inline-block" :src="post.avatar">
-            </small>
-          </p>
-        </div>
-      </div>
-
-      <div class="media-right">
-        <span class="icon is-small">
-          <i class="fa fa-chevron-up"></i>
-          <strong class="has-text-info">{{ post.votes || 0 }}</strong>
+  <article v-if="post !== null" class="card post">
+    <header class="card-header">
+      <p class="card-header-title">
+        {{ post.title }}
+      </p>
+      <span class="hotPost" v-if="isHot">
+        <i class="fas fa-star" aria-hidden="true"></i>
+      </span>
+    </header>
+    <div class="card-content">
+      <div class="content has-text-left">
+        {{ post.content }}
+        <span class="is-small">
+          <br/><b>Lead by:</b> {{ post.teamLead}}
+          <br/><b>Made by:</b> {{ post.teamMembers}}
         </span>
       </div>
-    </article>
-  </div>
+    </div>
+    <footer class="card-footer">
+      <a href="#" class="card-footer-item" :class="{ 'has-background-success has-text-white': currentVote === post.id }" @click="vote">VOTE!</a>
+    </footer>
+  </article>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "Post",
-  props: {
-    post: null
+  computed: {
+    ...mapState("user", ["currentVote"])
   },
+  props: ['post', 'isHot'],
   methods: {
+    vote () {
+      if (this.currentVote !== this.post.id) {
+        this.$store.dispatch('user/vote', this.post)
+      }
+    }
   }
+
 };
 </script>
 
 <style lang='scss' scoped>
-.project p {
-  font-size: calc(12px + 0.5vw);
-}
+.post {
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  width: calc(24% - 30px);
 
-.section {
-  padding: 0.5rem 1.5rem;
-}
-.media {
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid #e6e7e9;
-  padding: 1em 1.5em 0.5em 1.5em;
-  border-radius: 0.3em;
-}
+  .card-header {
+    box-sizing: border-box;
+    padding: 10px;
+    
+    .card-header-title {
+      margin: 0;
+    }
+  }
 
-// Once you reach 20 votes.
-@mixin border-gradient($from, $to, $weight: 0) {
-  $mix-main: mix($from, $to);
-  $mix-sub-from: mix($mix-main, $from);
-  $mix-sub-to: mix($mix-main, $to);
+  .card-footer a {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 
-  box-shadow: 0 1px 0 $weight rgba($mix-sub-to, 0.25),
-    0 -1px 0 $weight rgba($mix-sub-from, 0.25),
-    1px 0 0 $weight rgba($mix-sub-to, 0.25),
-    -1px 0 0 $weight rgba($mix-sub-from, 0.25),
-    1px -1px 0 $weight rgba($mix-main, 0.5),
-    -1px 1px 0 $weight rgba($mix-main, 0.5), 1px 1px 0 $weight rgba($to, 0.75),
-    -1px -1px 0 $weight rgba($from, 0.75);
-}
-.hot {
-  @include border-gradient(rgb(255, 72, 22), rgb(255, 185, 0));
+    &.has-background-success {
+      cursor: initial;
+    }
+  }
+
+  p {
+    font-size: calc(12px + 0.5vw);
+  }
+
+  .hotPost {
+    border-radius: 50px;
+    box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, .1);
+    display: inline-block;
+    height: 52px;
+    right: 10px;
+    position: absolute;
+    top: 10px;
+    width: 52px;
+    z-index: 1;
+
+    i {
+      font-size: 22px;
+      left: 14px;
+      position: absolute;
+      transform: rotate(15deg);
+      top: 14px;
+      text-shadow: rgba(0,0,0, 0.2) 0 0 1px;
+      z-index: 10;
+    }
+
+    &:before {
+      content: "";
+      width: 50px; 
+      height: 50px;
+      display: block;
+      position: absolute;
+      border-radius: 50px;
+      z-index: 1;
+    }
+
+    &:after{
+      content: "";
+      width: 42px; 
+      height: 42px;
+      display: block;
+      top: 4px;
+      left: 4px;
+      position: absolute;
+      border-radius: 50px;
+      z-index: 2;
+    }
+  }
+
+  &:nth-child(1) .hotPost {
+    background: linear-gradient(45deg,  rgba(242,215,12,1) 0%,rgba(255,255,255,1) 56%,rgba(252,235,0,1) 96%);
+    i {
+      color: #F2D70C;
+    }
+
+    &:before{
+      background: linear-gradient(45deg,  rgba(242,215,12,1) 0%,rgba(255,255,255,1) 56%,rgba(252,235,0,1) 96%);
+      border: 1px solid rgba(242,215,12,1);
+    }
+    &:after{
+      background: linear-gradient(45deg,  rgba(242,215,12,1) 0%,rgba(255,255,255,1) 56%,rgba(252,235,0,1) 96%);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-left: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(242,215,12,0.3);
+      border-right: 1px solid rgba(242,215,12,0.3);
+      box-shadow: inset 0px 0px 2px 2px rgba(150, 150, 150, .05);
+    }
+  }
+
+  &:nth-child(2) .hotPost {
+    background: linear-gradient(45deg,  rgba(160,160,160,1) 0%,rgba(232,232,232,1) 56%);
+    i {
+      color: #A0A0A0;
+    }
+
+    &:before{
+      background: linear-gradient(45deg,  rgba(181,181,181,1) 0%,rgba(252,252,252,1) 56%,rgba(232,232,232,1) 96%);
+      border: 1px solid rgba(181,181,181,1);
+    }
+    &:after{
+      background: linear-gradient(45deg,  rgba(181,181,181,1) 0%,rgba(252,252,252,1) 56%,rgba(232,232,232,1) 96%);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-left: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(160,160,160,0.3);
+      border-right: 1px solid rgba(160,160,160,0.5);
+      box-shadow: inset 0px 0px 2px 2px rgba(150, 150, 150, .05);
+    }
+  }
+
+  &:nth-child(3) .hotPost {
+    background: linear-gradient(45deg,  rgba(223,182,103,1) 0%,rgba(249,243,232,1) 56%,rgba(231,192,116,1) 96%); 
+    i {
+      color: #D19C35;
+    }
+
+    &:before{
+      background: linear-gradient(135deg,  #d19c35 0%,#f7e6c5 50%,#e8b558 100%);
+      border: 1px solid #e6b86a;
+    }
+    &:after{
+      background: linear-gradient(45deg,  rgba(223,182,103,1) 0%,rgba(249,243,232,1) 56%,rgba(231,192,116,1) 96%);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-left: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(209,156,53,0.3);
+      border-right: 1px solid rgba(209,156,53,0.5);
+      box-shadow: inset 0px 0px 2px 2px rgba(153, 106, 26, .05);
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 20px;
+    max-width: calc(100vw - 50px);
+    width: 100%;
+  }
+
+ 
 }
 </style>
