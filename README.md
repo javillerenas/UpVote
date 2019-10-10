@@ -6,6 +6,7 @@
     width=200px
   />
   <br/>
+  <br/>
   <img
     alt="upcote mock"
     src="_docs/upvote-mock.png"
