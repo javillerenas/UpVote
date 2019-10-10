@@ -3,7 +3,7 @@
   <img
     alt="Upvote logo"
     src="_docs/upvote-logo.png"
-    width=1750px
+    width=175px
   />
   <h1>UpVote! 💯🗳</h1>
   <strong>Hacker New's-like Site</strong>
