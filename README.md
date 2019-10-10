@@ -3,7 +3,7 @@
   <img
     alt="Upvote logo"
     src="_docs/upvote-logo.png"
-    width=200px
+    width=1750px
   />
   <h1>UpVote! 💯🗳</h1>
   <strong>Hacker New's-like Site</strong>
@@ -12,7 +12,7 @@
   <img
     alt="upcote mock"
     src="_docs/upvote-mock.png"
-    width=600px
+    width=750px
   />
   <br/>
 </div>
