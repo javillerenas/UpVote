@@ -1,12 +1,17 @@
 <div align="center">
   <br>
   <img
-    alt="DEV"
-    src="mockup.png"
-    width=350px
+    alt="Upvote logo"
+    src="_docs/upvote-logo.png"
+    width=300px
   />
   <h1>UpVote! 💯🗳</h1>
   <strong>Hacker New's-like Site</strong>
+  <img
+    alt="upcote mock"
+    src="_docs/upvote-mock.png"
+    width=600px
+  />
 </div>
 <br/>
  <p align="center">
