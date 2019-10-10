@@ -6,13 +6,13 @@
     width=200px
   />
   <h1>UpVote! 💯🗳</h1>
+  <strong>Hacker New's-like Site</strong>
+  <br/>
   <img
     alt="upcote mock"
     src="_docs/upvote-mock.png"
     width=600px
   />
-  <br/>
-  <strong>Hacker New's-like Site</strong>
   <br/>
 </div>
 <br/>
