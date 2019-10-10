@@ -5,15 +5,15 @@
     src="_docs/upvote-logo.png"
     width=200px
   />
-  <br/>
-  <br/>
+  <h1>UpVote! 💯🗳</h1>
   <img
     alt="upcote mock"
     src="_docs/upvote-mock.png"
-    width=700px
+    width=600px
   />
-  <h1>UpVote! 💯🗳</h1>
+  <br/>
   <strong>Hacker New's-like Site</strong>
+  <br/>
 </div>
 <br/>
  <p align="center">
